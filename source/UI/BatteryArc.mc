@@ -7,11 +7,11 @@ module UI {
 
     const RADIUS = 116;
     const THICKNESS = 10;
-    const START_DEG = 230;
-    const SWEEP_DEG = 80;
+    const START_DEG = 240;
+    const SWEEP_DEG = 60;
     const DIRECTION = Graphics.ARC_COUNTER_CLOCKWISE;
     const ARC_OFFSET_X = 0;
-    const ARC_OFFSET_Y = 0;
+    const ARC_OFFSET_Y = 6;
 
     // Optional calibration overlay.
     const CALIBRATION_MODE = true;
@@ -20,7 +20,7 @@ module UI {
         static function draw(dc, cx, cy, battPct) {
             var pct = clampPct(battPct);
             var arcCx = (dc.getWidth() / 2) + UI.ARC_OFFSET_X;
-            var arcCy = (dc.getHeight() / 2) + UI.ARC_OFFSET_Y + 6;
+            var arcCy = (dc.getHeight() / 2) + UI.ARC_OFFSET_Y;
             var endDeg = UI.START_DEG + UI.SWEEP_DEG;
 
             dc.setColor(Palette.BATT_TRACK, Graphics.COLOR_TRANSPARENT);
