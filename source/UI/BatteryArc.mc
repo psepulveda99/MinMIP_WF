@@ -4,8 +4,7 @@ using Palette;
 
 module UI {
     // Shape controls for smile gauge.
-    const ARC_CENTER_X = 120;
-    const ARC_CENTER_Y = 126;
+
     const RADIUS = 116;
     const THICKNESS = 10;
     const START_DEG = 230;
@@ -20,8 +19,8 @@ module UI {
     class BatteryArc {
         static function draw(dc, cx, cy, battPct) {
             var pct = clampPct(battPct);
-            var arcCx = UI.ARC_CENTER_X + UI.ARC_OFFSET_X;
-            var arcCy = UI.ARC_CENTER_Y + UI.ARC_OFFSET_Y;
+            var arcCx = (dc.getWidth() / 2) + UI.ARC_OFFSET_X;
+            var arcCy = (dc.getHeight() / 2) + UI.ARC_OFFSET_Y + 6;
             var endDeg = UI.START_DEG + UI.SWEEP_DEG;
 
             dc.setColor(Palette.BATT_TRACK, Graphics.COLOR_TRANSPARENT);
