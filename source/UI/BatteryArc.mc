@@ -4,13 +4,13 @@ using Palette;
 
 module UI {
     // Shape controls for smile gauge.
-    const RADIUS = 118;
+    const RADIUS = 116;
     const THICKNESS = 10;
-    const START_DEG = 20;
-    const SWEEP_DEG = 140;
-    const DIRECTION = Graphics.ARC_CLOCKWISE;
-    const ARC_OFFSET_X = -2;
-    const ARC_OFFSET_Y = 0;
+    const START_DEG = 210;
+    const SWEEP_DEG = 120;
+    const DIRECTION = Graphics.ARC_COUNTER_CLOCKWISE;
+    const ARC_OFFSET_X = 0;
+    const ARC_OFFSET_Y = 1;
 
     // Optional calibration overlay.
     const CALIBRATION_MODE = true;
@@ -44,17 +44,20 @@ module UI {
 
         static function drawCalibration(dc, cx, cy) {
             dc.setColor(Palette.TXT_SECOND, Graphics.COLOR_TRANSPARENT);
-            drawAngleMark(dc, cx, cy, UI.RADIUS + 10, 0, "0");
-            drawAngleMark(dc, cx, cy, UI.RADIUS + 10, 90, "90");
-            drawAngleMark(dc, cx, cy, UI.RADIUS + 10, 180, "180");
-            drawAngleMark(dc, cx, cy, UI.RADIUS + 10, 270, "270");
+            drawAngleMark(dc, cx, cy, UI.RADIUS + 6, 0, "0");
+            drawAngleMark(dc, cx, cy, UI.RADIUS + 6, 90, "90");
+            drawAngleMark(dc, cx, cy, UI.RADIUS + 6, 180, "180");
+            drawAngleMark(dc, cx, cy, UI.RADIUS + 6, 270, "270");
         }
 
         static function drawAngleMark(dc, cx, cy, r, deg, label) {
             var rad = deg * Math.PI / 180.0;
             var x = (cx + r * Math.cos(rad)).toNumber();
             var y = (cy + r * Math.sin(rad)).toNumber();
-            dc.drawText(x, y, Graphics.FONT_XTINY, label, Graphics.TEXT_JUSTIFY_CENTER);
+            var tx = (cx + (r + 10) * Math.cos(rad)).toNumber();
+            var ty = (cy + (r + 10) * Math.sin(rad)).toNumber();
+            dc.drawText(tx, ty, Graphics.FONT_XTINY, label, Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawPoint(x, y);
         }
 
         static function clampPct(p) {
