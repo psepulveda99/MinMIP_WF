@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout id="WatchFaceLayout">
+    <label id="label_time"
+        x="center"
+        y="center"
+        justification="Gfx.TEXT_JUSTIFY_CENTER"
+        font="Gfx.FONT_NUMBER_MILD" />
+</layout>

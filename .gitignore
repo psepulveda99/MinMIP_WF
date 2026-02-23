@@ -1,0 +1,27 @@
+# Archivos compilados
+bin/
+build/
+*.prg
+*.iq
+*.iq.debug.xml
+*.prg.debug.xml
+
+# Directorios generados por el compilador
+bin/gen/
+bin/internal-mir/
+bin/external-mir/
+bin/mir/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OneDrive
+*.lnk
