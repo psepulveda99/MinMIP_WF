@@ -8,7 +8,6 @@ class App extends Application.AppBase {
     }
 
     function getInitialView() {
-        // For watchfaces, return only the view to avoid delegate/runtime issues in simulator.
         return [ new Views.WatchFaceView() ];
     }
 }

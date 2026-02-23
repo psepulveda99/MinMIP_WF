@@ -3,9 +3,10 @@
 $SdkBin = "C:\Users\Pablo Sepulveda\AppData\Roaming\Garmin\ConnectIQ\Sdks\connectiq-sdk-win-8.4.1-2026-02-03-e9f77eeaa\bin"
 $SimulatorExe = Join-Path $SdkBin "simulator.exe"
 
-Write-Host "Compilando MinMIP_WF para simulador (.prg)..." -ForegroundColor Green
+Write-Host "Compilando MinMIP_WF para simulador (.prg debug)..." -ForegroundColor Green
 
-monkeyc -d fenix7spro -f monkey.jungle -o bin\MinMIP_WF.prg -y "C:\DevKeys\developer_key"
+# Para simulador, usar build debug (-g)
+monkeyc -g -d fenix7spro -f monkey.jungle -o bin\MinMIP_WF.prg -y "C:\DevKeys\developer_key"
 if ($LASTEXITCODE -ne 0) {
     Write-Host "Error en la compilacion!" -ForegroundColor Red
     exit $LASTEXITCODE
@@ -13,7 +14,6 @@ if ($LASTEXITCODE -ne 0) {
 
 Write-Host "Compilacion exitosa!" -ForegroundColor Green
 
-# Abre simulador solo si no esta corriendo.
 if (-not (Get-Process -Name simulator -ErrorAction SilentlyContinue)) {
     Write-Host "Abriendo simulador..." -ForegroundColor Green
     Start-Process -FilePath $SimulatorExe | Out-Null
