@@ -4,12 +4,12 @@ using Palette;
 
 module UI {
     // Shape controls for smile gauge.
-    const ARC_CENTER_X = 119;
+    const ARC_CENTER_X = 120;
     const ARC_CENTER_Y = 126;
     const RADIUS = 116;
     const THICKNESS = 10;
-    const START_DEG = 210;
-    const SWEEP_DEG = 120;
+    const START_DEG = 230;
+    const SWEEP_DEG = 80;
     const DIRECTION = Graphics.ARC_COUNTER_CLOCKWISE;
     const ARC_OFFSET_X = 0;
     const ARC_OFFSET_Y = 0;
