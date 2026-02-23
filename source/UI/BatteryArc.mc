@@ -5,7 +5,7 @@ using Palette;
 module UI {
     // Shape controls for smile gauge.
     const ARC_CENTER_X = 119;
-    const ARC_CENTER_Y = 119;
+    const ARC_CENTER_Y = 126;
     const RADIUS = 116;
     const THICKNESS = 10;
     const START_DEG = 210;
