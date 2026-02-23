@@ -46,8 +46,8 @@ module Views {
         }
 
         function onShow() {
-            // heading real (low-rate). Si te preocupa consumo, lo hacemos toggleable luego.
-            SensorService.enableMagnetometerLowRate();
+            // Temporalmente desactivado: en simulador produce "Symbol Not Found" al iniciar.
+            // SensorService.enableMagnetometerLowRate();
         }
 
         function onHide() {
